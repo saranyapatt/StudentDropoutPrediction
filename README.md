@@ -24,7 +24,6 @@ This project tackles the problem of **early student dropout detection** on an im
 ├── StudentDropoutPredictionSL.py   # Supervised Learning — KNN with BallTree
 ├── StudentDropoutPredictionUSL.py  # Unsupervised Learning — Hierarchical Clustering
 ├── conf.py                          # Shared utility functions
-├── presentation.html                # reveal.js presentation slides
 └── README.md
 ```
 

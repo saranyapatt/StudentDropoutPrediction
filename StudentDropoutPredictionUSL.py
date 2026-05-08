@@ -6,6 +6,7 @@ from sklearn.cluster import AgglomerativeClustering, KMeans
 from conf import evaluate_clustering, divisive_clustering
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import silhouette_score, accuracy_score, precision_score, recall_score, f1_score, fbeta_score
 
 # 1. Download dataset and set up path
 path = kagglehub.dataset_download("meharshanali/student-dropout-prediction-dataset")
@@ -130,9 +131,6 @@ agg_labels = agg.fit_predict(X_pca)
 div_labels = divisive_clustering(X_pca, max_clusters=N_CLUSTERS)
 
 # ── Compare both with silhouette score ───────────────────────
-from sklearn.metrics import (silhouette_score, accuracy_score,
-                             precision_score, recall_score, f1_score, fbeta_score)
-
 print(f"\nAgglomerative silhouette: {silhouette_score(X_pca, agg_labels):.4f}")
 print(f"Divisive      silhouette: {silhouette_score(X_pca, div_labels):.4f}")
 
